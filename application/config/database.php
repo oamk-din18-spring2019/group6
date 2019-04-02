@@ -76,9 +76,11 @@ $query_builder = TRUE;
 $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
-	'username' => 'auth',
-	'password' => '9029',
-	'database' => 'Authentication',
+
+	'username' => 'user',
+	'password' => 'pass',
+	'database' => 'bills',
+
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
