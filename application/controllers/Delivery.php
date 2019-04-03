@@ -12,7 +12,7 @@ class Delivery extends CI_Controller{
 
   function show_delivery()
   {
-    $data['customers']=$this->Delivery_model->getDelivery();
+    $data['customer']=$this->Delivery_model->getDelivery();
     $data['page']='delivery/show_delivery';
     $this->load->view('menu/content',$data);
   }
