@@ -76,12 +76,10 @@ $query_builder = TRUE;
 $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
-
-	'username' => 'user',
+  'username' => 'user',
 	'password' => 'pass',
-	'database' => 'bills',
-
-	'dbdriver' => 'mysqli',
+	'database' => 'online_shop',
+  'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'production'),
