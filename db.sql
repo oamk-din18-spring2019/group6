@@ -1,5 +1,6 @@
-create database Authentication;
+
 CREATE TABLE `users` (
+  `idCustomer` INT,
   `username` varchar(20) NOT NULL,
   `firstname` varchar(255) NOT NULL,
   `lastname` varchar(255) NOT NULL,
@@ -12,3 +13,7 @@ CREATE TABLE `users` (
 
 ALTER TABLE `users`
   ADD PRIMARY KEY (`username`);
+
+ALTER TABLE `users` DROP PRIMARY KEY (`username`);
+ALTER TABLE `users` ADD PRIMARY KEY (`idCustomer`);
+
