@@ -17,6 +17,15 @@
 }
 
 /* header */
+.header-content
+{
+	display: block;
+}
+.header-main
+{
+	background-color: black;
+	display: flex;
+}
 /*.header-line
 {
   width: 100%;
@@ -29,6 +38,39 @@
   border-color: green;
 }
 */
+/*Header Content*/
+h1#logo { font-size:0; line-height:0; width:248px; height:61px; float:right;}
+h1#logo a{ display:block; height:61px; text-indent: -4000px; background:url(../images/logo.gif); }
+
+#navigation { float:right; white-space:nowrap; }
+#navigation ul{ list-style-type: none; padding-top:30px;}
+#navigation ul li{ float:left; display:inline; border-right:solid 1px #5f5f5f; padding-right:8px; margin-right:8px;}
+#navigation ul li.last{ border-right:0; padding-right:0; margin-right:0;}
+#navigation ul li a{ color:#fff;}
+#navigation ul li a:hover,
+#navigation ul li a.active { color:#ffd900; }
+
+
+.imgHeader
+{
+	height: 100%;
+	width: 100%;
+}
+#Button
+{
+	width: 20%;
+	text-align: center;
+}
+#Button i
+{
+	font-size: 60px;
+	padding-top: 100px;
+}
+#Img
+{
+	width: 60%; 
+}
+
 /*cart*/
 #cart-Img
 {
@@ -117,7 +159,7 @@
 	font-family: 'Poppins', sans-serif;
 	font-size: 16px;
 	width: 20%;
-	text-align: center;
+	text-align: left;
 }
 .footerText
 {

@@ -23,9 +23,29 @@
 		<div class="wrapper">
 			<div class="view-range">
 				<div class="header">
-					<div class="header-line"></div>
 					<div class="header-main">
-						<div class="name">ONLINE SHOP</div>
+						<div class="header-content">
+							<h1 id="logo"><a href="#">Urgan Gear</a></h1>
+								<div id="navigation">
+								    <ul>
+									    <li><a href="#">Home</a></li>
+									    <li><a href="#">Support</a></li>
+									    <li><a href="#">My Account</a></li>
+									    <li><a href="#">The Store</a></li>
+									    <li class="last"><a href="#">Contact</a></li>
+								    </ul>
+								</div>
+						</div>
+						<div id="Button">									
+							<i onclick="show_previous_picture()" class="fas fa-arrow-alt-circle-left">
+							</i>
+						</div>
+						<div id="Img"><img class="imgHeader" id="image_element_id" src="../images/slide2.jpg"></div>
+						<div id="Button">
+							<i onclick="show_next_picture()" class="fas fa-arrow-alt-circle-right">		
+							</i>
+						</div>
+					</div>
 					</div>
 					<div class="menu">
 						<nav class="navbar navbar-default" role="navigation">
@@ -281,4 +301,31 @@
         });
     });
 </script>
-         
+
+<script>
+
+var  picture_file_names  = [ "../images/slide1.jpg",
+                             "../images/slide2.jpg"] ;
+var  picture_index = 0 ;
+function show_next_picture()
+{
+   picture_index ++ ;
+   if ( picture_index >= picture_file_names.length )
+   {
+      picture_index = 0 ;
+   }
+   var image_element = document.getElementById( "image_element_id" ) ;
+   image_element.src = picture_file_names[ picture_index ] ;
+}
+function show_previous_picture()
+{
+   picture_index -- ;
+
+   if ( picture_index < 0 )
+   {
+      picture_index = picture_file_names.length - 1 ;
+   }
+   var image_element = document.querySelector( '#image_element_id' ) ;
+   image_element.src = picture_file_names[ picture_index ] ;
+}
+</script>        
