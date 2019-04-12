@@ -1,6 +1,13 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 class Delivery_model extends CI_Model{
+
+    public function searching($keyword) {
+      $this->db->like('productName',$keyword);
+      $query  =   $this->db->get('products');
+      return $query->result();
+    }
+
     public function getDelivery()
     {
       $this->db->select('iddelivery,idBills,firstname,lastname,streetAdress');
@@ -9,4 +16,5 @@ class Delivery_model extends CI_Model{
       $this->db->join('customer', 'bills.idCustomer=customer.idCustomer', 'inner');
       return $this->db->get()->result_array();
     }
+
 }

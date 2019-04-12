@@ -12,4 +12,16 @@ class Delivery extends CI_Controller{
     $data['page']='delivery/show_delivery';
     $this->load->view('menu/content',$data);
   }
+  function search_form() {
+    $data['page']='search/search_form';
+    $this->load->view('menu/content',$data);
+  }
+
+  function searching_items() {
+    $keyword = $this->input->post('keyword');
+    $data['items'] = $this->Search_model->searching($keyword);
+    $this->load->view('search/results_searching', $data);
+  }
+
+
 }
