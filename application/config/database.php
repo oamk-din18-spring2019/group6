@@ -79,7 +79,7 @@ $db['default'] = array(
 
 	'username' => 'user',
 	'password' => 'pass',
-	'database' => 'bills',
+	'database' => 'online_shop',
 
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',

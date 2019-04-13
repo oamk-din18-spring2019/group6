@@ -1,3 +1,5 @@
+
+    
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -87,8 +89,12 @@
 						                                        <th></th>
 						                                    </tr>
 						                                </thead>
-						                                <tbody></tbody>
+						                                <tbody id="insideCart"></tbody>
 						                            </table>
+						                            <hr>
+						                            <button type="button" class="btn btn-warning buyButton" style="width:40%">Buy All</button>
+
+						                            <button type="button" class="btn btn-danger clearButton">Clear All</button>
 					                           	</div>
 				                            </li>
 			                            </ul>
@@ -160,44 +166,44 @@
 					<div class="image">
 						<img src="https://www.itr.co.uk/app/uploads/2018/09/Apple-iPhone-6-16Gb-300x300.jpg"/>
 					</div>
-					<div class="tetx">
-						<h3>IPHONE 7 32gb</h3>
+					<div class="text">
+						<h3>IPHONE 7 Grey 32GB</h3>
 						<h4>Description</h4>
 						...
-						<p>$400</p>
+						<p>$200</p>
 					</div>
 					<div class="button">
-						<button type="button" class="btn btn-primary">ADD TO CART</button>
+						<button type="button" class="btn btn-primary cartButton" data-id="1">ADD TO CART</button>
 					</div>
 				</div>
 				
 				<div class="productColumn">
 					<div class="image">
-						<img src="https://www.itr.co.uk/app/uploads/2018/09/Apple-iPhone-6-16Gb-300x300.jpg"/>
+						<img src="https://bh01.bantheme.com/wp-content/uploads/2015/03/iphone-5s-16gb-13-300x300.jpg"/>
 					</div>
-					<div class="tetx">
-						<h3>IPHONE 7 32gb</h3>
+					<div class="text">
+						<h3>IPHONE 5S Grey 16GB</h3>
 						<h4>Description</h4>
 						...
 						<p>$400</p>
 					</div>
 					<div class="button">
-						<button type="button" class="btn btn-primary">ADD TO CART</button>
+						<button type="button" class="btn btn-primary cartButton" data-id="2">ADD TO CART</button>
 					</div>
 				</div>
 				
 				<div class="productColumn">
 					<div class="image">
-						<img src="https://www.itr.co.uk/app/uploads/2018/09/Apple-iPhone-6-16Gb-300x300.jpg"/>
+						<img src="https://dienthoaidoc.com/wp-content/uploads/2017/11/ip-x-64-tr%E1%BA%AFng-1-300x300.png"/>
 					</div>
-					<div class="tetx">
-						<h3>IPHONE 7 32gb</h3>
+					<div class="text">
+						<h3>IPHONE X 256GB</h3>
 						<h4>Description</h4>
 						...
-						<p>$400</p>
+						<p>$800</p>
 					</div>
 					<div class="button">
-						<button type="button" class="btn btn-primary">ADD TO CART</button>
+						<button type="button" class="btn btn-primary cartButton" data-id="3">ADD TO CART</button>
 					</div>
 				</div>
 			</div>
@@ -206,46 +212,46 @@
 			<div class="productRow">
 				<div class="productColumn">
 					<div class="image">
-						<img src="https://www.itr.co.uk/app/uploads/2018/09/Apple-iPhone-6-16Gb-300x300.jpg"/>
+						<img src="https://cdn.tgdd.vn/Products/Images/42/93705/iphone-7-red-128gb-300x300.jpg"/>
 					</div>
-					<div class="tetx">
-						<h3>IPHONE 7 32gb</h3>
+					<div class="text">
+						<h3>IPHONE 8 Red 64GB</h3>
 						<h4>Description</h4>
 						...
-						<p>$400</p>
+						<p>$600</p>
 					</div>
 					<div class="button">
-						<button type="button" class="btn btn-primary">ADD TO CART</button>
+						<button type="button" class="btn btn-primary cartButton" data-id="4">ADD TO CART</button>
 					</div>
 				</div>
 				
 				<div class="productColumn">
 					<div class="image">
-						<img src="https://www.itr.co.uk/app/uploads/2018/09/Apple-iPhone-6-16Gb-300x300.jpg"/>
+						<img src="https://cpn.vn/product_images/l/148/KX-TGC410__90276_thumb.jpg"/>
 					</div>
-					<div class="tetx">
-						<h3>IPHONE 7 32gb</h3>
+					<div class="text">
+						<h3>Desktop Phone 1</h3>
 						<h4>Description</h4>
 						...
-						<p>$400</p>
+						<p>$ Free</p>
 					</div>
 					<div class="button">
-						<button type="button" class="btn btn-primary">ADD TO CART</button>
+						<button type="button" class="btn btn-primary cartButton" data-id="5">ADD TO CART</button>
 					</div>
 				</div>
 				
 				<div class="productColumn">
 					<div class="image">
-						<img src="https://www.itr.co.uk/app/uploads/2018/09/Apple-iPhone-6-16Gb-300x300.jpg"/>
+						<img src="https://vctel.vn/wp-content/uploads/2017/05/dien-thoai-Ip-panasonic-KX-HDV130-vctel-300x300.jpg"/>
 					</div>
-					<div class="tetx">
-						<h3>IPHONE 7 32gb</h3>
+					<div class="text">
+						<h3>IP Panasonic</h3>
 						<h4>Description</h4>
 						...
-						<p>$400</p>
+						<p>$ Free</p>
 					</div>
 					<div class="button">
-						<button type="button" class="btn btn-primary">ADD TO CART</button>
+						<button type="button" class="btn btn-primary cartButton" data-id="6">ADD TO CART</button>
 					</div>
 				</div>
 			</div>
@@ -280,7 +286,7 @@
 </html>
 
 
-    <!-- Page Content  -->
+<!-- sidebar  
 
 <script type="text/javascript">
     $(document).ready(function () {
@@ -290,7 +296,6 @@
             // hide overlay
             $('.overlay').removeClass('active');
         });
-
         $('#showSidebar').on('click', function () {
             // open sidebar
             $('#sidebar,.items').addClass('active');
@@ -301,9 +306,10 @@
         });
     });
 </script>
+-->
 
+<!-- next and back button in header -->
 <script>
-
 var  picture_file_names  = [ "../images/slide1.jpg",
                              "../images/slide2.jpg"] ;
 var  picture_index = 0 ;
@@ -320,7 +326,6 @@ function show_next_picture()
 function show_previous_picture()
 {
    picture_index -- ;
-
    if ( picture_index < 0 )
    {
       picture_index = picture_file_names.length - 1 ;
@@ -329,3 +334,6 @@ function show_previous_picture()
    image_element.src = picture_file_names[ picture_index ] ;
 }
 </script>        
+
+<!--add to cart-->
+<script src="../index.js"></script>

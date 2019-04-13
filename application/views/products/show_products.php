@@ -7,6 +7,7 @@
           <div>
               <p style="padding-top: 4px"><label for="">ID</label></p>
               <p><label for="">Name</label> <br></p>
+              <p><label>Image</label></p>
               <p style="padding-top: 4px"><label for="">Description</label> <br></p>
               <p><label for="">Brand</label> <br></p>
               <p><label for="">Type</label> <br></p>
@@ -17,6 +18,7 @@
           <div>
               <p><input type="number" name="id" required> <br> </p>  
               <p><input type="text" name="name" required> <br></p> 
+              <p><input type="file" name="img" size="25" /><br></p>
               <p><input type="text" name="des"  required> <br></p>
               <p><input type="text" name="brand"  required> <br></p>
               <p><input type="text" name="type"  required> <br></p>
