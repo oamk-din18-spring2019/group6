@@ -8,12 +8,12 @@
     <?php
     foreach ($bills as $row) {
       echo '<tr>';
-        echo '<td>'.$row['idbills'].'</td>';
+        echo '<td>'.$row['idBills'].'</td>';
         echo '<td>'.$row['idcustomer'].'</td>';
         echo '<td>'.$row['firstname'].'</td>';
         echo '<td>'.$row['lastname'].'</td>';
         echo '<td>'.$row['idproducts'].'</td>';
-        echo '<td>'.$row['product_name'].'</td>';
+        echo '<td>'.$row['productName'].'</td>';
         echo '<td>'.$row['amount'].'</td>';
         echo '<td>'.$row['totalOfMoney'].'</td>';
 
