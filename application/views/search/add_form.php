@@ -16,7 +16,7 @@
   <input type="text" name="streetAdress" value=""> <br>
 
   <label for="">date</label> <br>
-  <input type="text" name="date" value=""> <br>
+  <input type="text" value="<?php echo date('d / m / Y'); ?>"/> <br>
 
   <input type="submit" name="" value="Add">
 </form>
