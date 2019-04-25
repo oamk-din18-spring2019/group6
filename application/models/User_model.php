@@ -1,6 +1,6 @@
 <?php
 
-class Model_user extends CI_Model {
+class User_model extends CI_Model {
 
     public function insertUser () {
 
@@ -20,6 +20,13 @@ class Model_user extends CI_Model {
         //insert data to the database
         $this->db->insert('users',$data);
 
+    }
+
+    public function get_id($username){
+        $this->db->select('idcustomer');
+        $this->db->from('users');
+        $this->db->where('username',$username);
+        return $this->db->get()->row('idcustomer');
     }
 
     public function checkLogin() {
@@ -45,6 +52,13 @@ class Model_user extends CI_Model {
 
         }
 
+    }
+
+    public function get_detail($username) {
+        $this->db->select('*');
+        $this->db->where('username',$username);
+        $query=$this->db->get('users');
+        return $query->result_array();
     }
 }
 

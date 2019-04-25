@@ -10,12 +10,12 @@ class Login extends CI_Controller {
 
         if ($this->form_validation->run() == FALSE) {
 
-            $this->load->view('login_view');
+            $this->load->view('customer/users/login_view');
 
         } else {
 
-            $this->load->model('Model_user');
-            $reslt = $this->Model_user->checkLogin();
+            $this->load->model('User_model');
+            $reslt = $this->User_model->checkLogin();
 
             if ($reslt != false) {
 
@@ -42,7 +42,7 @@ class Login extends CI_Controller {
                     $_SESSION['username'] = $user->username;
 
                     //redirect
-                    redirect('user/profile','refresh');
+                    redirect('customer/user/profile','refresh');
 
                 }
 
@@ -51,7 +51,7 @@ class Login extends CI_Controller {
 
                 //wrong credentials
                 $this->session->set_flashdata('error','Username or Password invalid!');
-                redirect('Home/Login');
+                redirect('customer/Home/Login');
 
             }
         }
@@ -60,6 +60,6 @@ class Login extends CI_Controller {
     //logging out of a user
     public function logoutUser() {
 		unset($_SESSION);
-		redirect('Home/Login');
+		redirect('customer/Home/Login');
 	}
 }
