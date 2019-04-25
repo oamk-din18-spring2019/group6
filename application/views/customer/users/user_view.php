@@ -42,9 +42,9 @@
                 <?php echo $_SESSION['username'];?><span class="caret"></span></a>
                 <ul class="dropdown-menu">
                 <li role="separator" class="divider"></li>
-                    <li><a href='#'>Profile</a></li>
+                    <li><a href='<?php echo base_url();?>index.php/customer/User/show_profile'>Profile</a></li>
                     <li role="separator" class="divider"></li>
-                    <li><a href='<?php echo base_url(); ?>index.php/Login/logoutUser'>Logout</a></li>
+                    <li><a href='<?php echo base_url();?>index.php/customer/Login/logoutUser'>Logout</a></li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->

@@ -30,7 +30,7 @@
                             <span aria-hidden="true">&times;</span></button>','</div>');
                         ?>
 
-                        <?php echo form_open('Login/loginUser') ?>
+                        <?php echo form_open('customer/Login/loginUser') ?>
 
                             <div class="form-group">
                                 <label for="username">Username</label>
@@ -41,7 +41,7 @@
                                 <input type="password" class="form-control" name="password" id="password" placeholder="Password">
                             </div>
                             <button type="submit" class="btn btn-primary">LOGIN</button>
-                            <a href="<?php echo site_url('Home/Register') ?>" class="btn btn-link">Sign Up</a>
+                            <a href="<?php echo site_url('customer/Home/Register') ?>" class="btn btn-link">Sign Up</a>
 
                         <?php echo form_close() ?>
 
