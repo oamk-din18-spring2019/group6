@@ -79,7 +79,9 @@ $db['default'] = array(
   'username' => 'user',
 	'password' => 'pass',
 	'database' => 'online_shop',
+
   'dbdriver' => 'mysqli',
+
 	'dbprefix' => '',
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'production'),
