@@ -9,7 +9,7 @@ class Category extends CI_Controller{
     //Codeigniter : Write Less Do More
     $this->load->model('Category_model');
   }
-  
+
 
   function show_category()
   {
@@ -18,4 +18,8 @@ class Category extends CI_Controller{
     $this->load->view('menu/content',$data);
   }
 
+  function index()
+  {
+    $this->load->view('customer/category/show_category');
+  }
 }

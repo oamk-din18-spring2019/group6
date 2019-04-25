@@ -11,7 +11,7 @@ class Items extends CI_Controller{
 
   function show_items()
   {
-    $id = $_GET['id'];
+    $id = $this->uri->segment(4);
     $data['items'] = $this->Items_model->get_item($id);
     $data['page'] = 'customer/items/show_items';
     $this->load->view('menu/content',$data);
