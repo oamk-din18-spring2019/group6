@@ -11,8 +11,8 @@ class User_model extends CI_Model {
             'firstname' => $this->input->post('firstname'),
             'lastname' => $this->input->post('lastname'),
             'email' =>$this->input->post('email'),
-            'streetAddress' =>$this->input->post('Address'),
-            'postalCode' =>$this->input->post('Postal Code'),
+            'streetAddress' =>$this->input->post('streetAddress'),
+            'postalCode' =>$this->input->post('postalCode'),
             'contact' => $this->input->post('contact'),
             'password' => sha1($this->input->post('password'))
 
