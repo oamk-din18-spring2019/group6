@@ -19,4 +19,11 @@ class Bills_model extends CI_Model{
     $this->db->insert('bills',$insert_data);
     return $this->db->affected_rows();
   }
+  public function get_id()
+  {
+
+    $this->db->select('max(idBills)');
+    $this->db->from('bills');
+    return $this->db->get()->result_array();
+  }
 }
