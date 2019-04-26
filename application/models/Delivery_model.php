@@ -16,8 +16,27 @@ class Delivery_model extends CI_Model{
       return $this->db->get()->result_array();
     }
     public function add_customer($insert_data)  {
-      $this->db->insert('dilivery',$insert_data);
+      $this->db->insert('delivery',$insert_data);
       return $this->db->affected_rows();
     }
-
+    public function show_delivery()  {
+      $this->db->select('*');
+      $this->db->from('delivery');
+      return $this->db->get()->result_array();
+    }
+    public function delete_delivery($id) {
+    $this->db->where('iddelivery',$id);
+    $this->db->delete('delivery');
+    }
+    public function edit_delivery($update_data,$id)  {
+    $this->db->where('iddelivery',$id);
+    $this->db->update('delivery',$update_data);
+    return $this->db->affected_rows();
+    }
+    public function get_chosen($id) {
+    $this->db->select('*');
+    $this->db->from('delivery');
+    $this->db->where('iddelivery',$id);
+    return $this->db->get()->result_array();
+    }
 }

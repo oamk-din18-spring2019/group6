@@ -5,7 +5,7 @@
     <title></title>
   </head>
   <body>
-    <form action="<?php echo site_url('search/searching_items');?>" method = "post">
+    <form action="<?php echo site_url('admin/delivery/searching_items');?>" method = "post">
       Search: <input type="text" name="keyword" value="">
       <input type="submit" name="" value="Search">
     </form>
