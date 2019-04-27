@@ -26,7 +26,7 @@ class Cart extends CI_Controller{
     $data['name'] = $products->productName;
     $data['price'] = $products->price;
     $this->cart->insert($data);
-    redirect(base_url('customer/cart/show_cart'));
+    redirect(site_url('customer/cart/show_cart'));
   }
   function show_cart()
   {
@@ -49,7 +49,7 @@ class Cart extends CI_Controller{
       $data['qty'] = $updated_qty;
       $this->cart->update($data);
     }
-    redirect(base_url('customer/cart/show_cart'));
+    redirect(site_url('customer/cart/show_cart'));
   }
   function delete_item()
   {
@@ -71,7 +71,7 @@ class Cart extends CI_Controller{
     else{
       $this->cart->destroy();
     }
-    redirect(base_url('customer/cart/show_cart'));
+    redirect(site_url('customer/cart/show_cart'));
   }
   function buy()
   {
@@ -97,7 +97,7 @@ class Cart extends CI_Controller{
     $result=$this->Bills_model->add_bill($insert_data);
     }
     $this->cart->destroy();
-    redirect('customer/cart/show_cart');
+    redirect(site_url('customer/cart/show_cart'));
   }
 
 

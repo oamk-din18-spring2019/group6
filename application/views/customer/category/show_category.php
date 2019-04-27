@@ -2,7 +2,7 @@
 		<div id="items">
       <?php
       foreach ($category as $row ) {
-      echo '<a href="'.base_url('/customer/items/show_items/');
+      echo '<a href="'.site_url('/customer/items/show_items/');
       echo $row['idproducts'].'">';
       echo '<div class="box">';
       echo '<div class="img">';
