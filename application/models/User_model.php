@@ -18,13 +18,13 @@ class User_model extends CI_Model {
 
         );
         //insert data to the database
-        $this->db->insert('users',$data);
+        $this->db->insert('customer',$data);
 
     }
 
     public function get_id($username){
         $this->db->select('idcustomer');
-        $this->db->from('users');
+        $this->db->from('customer');
         $this->db->where('username',$username);
         return $this->db->get()->row('idcustomer');
     }
@@ -38,7 +38,7 @@ class User_model extends CI_Model {
         //fetch data from database
         $this->db->where('username',$username);
         $this->db->where('password',$password);
-        $res = $this->db->get('users');
+        $res = $this->db->get('customer');
 
         //check if there's a user with the above inputs
         if ($res->num_rows() == 1) {
@@ -57,7 +57,7 @@ class User_model extends CI_Model {
     public function get_detail($username) {
         $this->db->select('*');
         $this->db->where('username',$username);
-        $query=$this->db->get('users');
+        $query=$this->db->get('customer');
         return $query->result_array();
     }
 }

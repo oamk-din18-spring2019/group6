@@ -15,7 +15,7 @@
     echo '<b>'.$row['productName'].'</b>';
     echo '<p>'.$row['description'].'</p>';
 		echo '<h1>'.$row['price'].'</h1>';
-    echo '<button type="button" name="button"><a href="'.base_url('customer/cart/add/'.$row['idproducts']).'">Add to cart</a></button>';
+    echo '<button type="button" name="button"><a href="'.site_url('customer/cart/add/'.$row['idproducts']).'">Add to cart</a></button>';
 
 }
     ?>
