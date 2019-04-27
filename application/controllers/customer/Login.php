@@ -25,7 +25,7 @@ class Login extends CI_Controller {
 
                 //fetch from databse
                 $this->db->select('*');
-                $this->db->from('users');
+                $this->db->from('customer');
                 $this->db->where(array('username' => $username , 'password' => $password));
                 $query = $this->db->get();
 
@@ -59,7 +59,8 @@ class Login extends CI_Controller {
     }
     //logging out of a user
     public function logoutUser() {
-		unset($_SESSION);
-		redirect('customer/Home/Login');
+        $_SESSION['user_logged'] = FALSE;
+        $_SESSION["username"] = "";
+		redirect('category/show_category');
 	}
 }
