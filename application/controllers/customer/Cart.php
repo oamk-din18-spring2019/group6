@@ -36,7 +36,6 @@ class Cart extends CI_Controller{
     $this->data['total_items'] = $total_items;
     $this->data['page'] = 'customer/cart/show_cart';
     $this->load->view('menu/content',$this->data);
-
      //trả về product
   }
   function update()
@@ -81,7 +80,7 @@ class Cart extends CI_Controller{
     $max_id = $this->Bills_model->get_id() ;
     $carts = $this->cart->contents();
     $bill_id = $max_id[0]['max(idBills)'] + 1;
-    $idc= 1;
+    $idc= $_SESSION['id'];
     $customer_array = $this->Cart_model->get_customer_by_id($idc);
     foreach ($carts as $row) {
       $insert_data=array(

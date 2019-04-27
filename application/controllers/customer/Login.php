@@ -25,7 +25,7 @@ class Login extends CI_Controller {
 
                 //fetch from databse
                 $this->db->select('*');
-                $this->db->from('users');
+                $this->db->from('customer');
                 $this->db->where(array('username' => $username , 'password' => $password));
                 $query = $this->db->get();
 
@@ -36,11 +36,11 @@ class Login extends CI_Controller {
 
                     //login message
                     $this->session->set_flashdata("success","You are logged in");
-
+                    $id = $this->User_model->get_id($user->username);
                     //set session variables
                     $_SESSION['user_logged'] = TRUE;
                     $_SESSION['username'] = $user->username;
-
+                    $_SESSION['id']= $id;
                     //redirect
                     redirect('customer/user/profile','refresh');
 
@@ -59,7 +59,8 @@ class Login extends CI_Controller {
     }
     //logging out of a user
     public function logoutUser() {
-		unset($_SESSION);
-		redirect('customer/Home/Login');
+      $_SESSION['user_logged']=false;
+      $_SESSION['username']="";
+		redirect('category/show_category');
 	}
 }
