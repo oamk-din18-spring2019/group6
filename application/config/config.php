@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 
-$config['base_url'] = 'http://localhost/project/group6';
+$config['base_url'] = 'http://localhost/group6';
 
 
 /*
