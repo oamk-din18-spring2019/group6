@@ -1,5 +1,5 @@
 
-<?php $this->load->view('menu/header'); ?>
+<?php $this->load->view('menu_admin/header'); ?>
 <div id="sidebar-left">
   <div class="middle">
     <div class="menu">
@@ -36,4 +36,4 @@
   </div>
 </div>
 <div id="main"><p><?php $this->load->view($page); ?></p></div>
-<?php $this->load->view('menu/footer'); ?>
+<?php $this->load->view('menu_admin/footer'); ?>
