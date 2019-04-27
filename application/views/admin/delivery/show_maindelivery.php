@@ -1,4 +1,3 @@
-<h2>Delivery</h2>
 <table border="1">
   <thead>
     <tr><th>iddelivery</th><th>idBills</th><th>firstname</th><th>lastname</th>

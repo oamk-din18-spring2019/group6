@@ -15,7 +15,6 @@ class Delivery extends CI_Controller{
     $data['page']='admin/delivery/search_form';
     $this->load->view('menu/content',$data);
   }
-
   function searching_items() {
     $keyword = $this->input->post('keyword');
     $data['items'] = $this->Search_model->searching($keyword);
