@@ -1,6 +1,5 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
 /*
 | -------------------------------------------------------------------
 | AUTO-LOADER
@@ -29,7 +28,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | 7. Models
 |
 */
-
 /*
 | -------------------------------------------------------------------
 |  Auto-load Packages
@@ -40,7 +38,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 $autoload['packages'] = array();
-
 /*
 | -------------------------------------------------------------------
 |  Auto-load Libraries
@@ -58,8 +55,7 @@ $autoload['packages'] = array();
 |
 |	$autoload['libraries'] = array('user_agent' => 'ua');
 */
-$autoload['libraries'] = array('database','session', 'upload');
-
+$autoload['libraries'] = array('database','form_validation','session');
 /*
 | -------------------------------------------------------------------
 |  Auto-load Drivers
@@ -80,7 +76,6 @@ $autoload['libraries'] = array('database','session', 'upload');
 |
 */
 $autoload['drivers'] = array();
-
 /*
 | -------------------------------------------------------------------
 |  Auto-load Helper Files
@@ -89,8 +84,7 @@ $autoload['drivers'] = array();
 |
 |	$autoload['helper'] = array('url', 'file');
 */
-$autoload['helper'] = array('url');
-
+$autoload['helper'] = array('url','file','date','html');
 /*
 | -------------------------------------------------------------------
 |  Auto-load Config files
@@ -103,8 +97,7 @@ $autoload['helper'] = array('url');
 | config files.  Otherwise, leave it blank.
 |
 */
-$autoload['config'] = array();
-
+$autoload['config'] = array('url','form','html');
 /*
 | -------------------------------------------------------------------
 |  Auto-load Language files
@@ -118,7 +111,6 @@ $autoload['config'] = array();
 |
 */
 $autoload['language'] = array();
-
 /*
 | -------------------------------------------------------------------
 |  Auto-load Models
