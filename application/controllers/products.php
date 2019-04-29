@@ -9,13 +9,43 @@ class products extends CI_Controller{
     $this->load->model('products_model');
   }
 
-  //show products is here
-  function show_products()
+  //main page
+  function mainpage()
   {
     $data['products']=$this->products_model->getProducts();
+    $data['page']='products/mainpage.php';
+    $this->load->view('menu/body',$data);
+  }
+  //chosen products
+  function chosen_products()
+  {
+    $data['page']='products/chosen_products.php';
+    $this->load->view('menu/body',$data);
+  }
+
+  //show products is here
+  function show_products()
+  { 
+    //search product
+    $keysearch = $this->input->post('search');
+    $data['product'] = $this->products_model->search_products($keysearch);
+
+    //show product
+    $data['products'] = $this->products_model->getProducts();
+
     $data['page']='products/show_products';
     $this->load->view('menu/body',$data);
   }
+
+  //search products is here
+  // function search_products()
+  // {
+  //   $keysearch = $this->input->post('search');
+  //   $data['product'] = $this->products_model->search_products($keysearch);
+  //   $data['page']='products/search_products';
+  //   $this->load->view('menu/body',$data);
+  // }
+ 
 
   //add products is here
   function add_products()
@@ -27,7 +57,8 @@ class products extends CI_Controller{
       "brand" => $this->input->post('brand'),
       "type" => $this->input->post('type'),
       "quantity" => $this->input->post('quantity'),
-      "price" => $this->input->post('price')
+      "price" => $this->input->post('price'),
+      "image" => $this->input->post('img')
     );
     $result=$this->products_model->add_products($insert_data);
     if ($result==1) 
@@ -74,7 +105,8 @@ class products extends CI_Controller{
       "brand" => $this->input->post('brand'),
       "type" => $this->input->post('type'),
       "quantity" => $this->input->post('quantity'),
-      "price" => $this->input->post('price')
+      "price" => $this->input->post('price'),
+      "image" => $this->input->post('img')
     );
     $result=$this->products_model->edit_products($update_data,$id);
     redirect('products/show_products');
