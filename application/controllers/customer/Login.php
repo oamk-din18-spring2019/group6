@@ -36,11 +36,11 @@ class Login extends CI_Controller {
 
                     //login message
                     $this->session->set_flashdata("success","You are logged in");
-
+                    $id = $this->User_model->get_id($user->username);
                     //set session variables
                     $_SESSION['user_logged'] = TRUE;
                     $_SESSION['username'] = $user->username;
-
+                    $_SESSION['id']= $id;
                     //redirect
                     redirect('category/show_category','refresh');
 
@@ -59,8 +59,10 @@ class Login extends CI_Controller {
     }
     //logging out of a user
     public function logoutUser() {
+
         $_SESSION['user_logged'] = FALSE;
         $_SESSION["username"] = "";
+
 		redirect('category/show_category');
 	}
 }
