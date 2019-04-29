@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>registration</title>
+    <title>Registration</title>
     <link href="<?php echo base_url() ?>assets/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
@@ -31,7 +31,7 @@
                             <span aria-hidden="true">&times;</span></button>','</div>');
                         ?>
 
-                        <?php echo form_open('Register/registerUser') ?>
+                        <?php echo form_open('customer/Register/registerUser') ?>
 
                             <div class="form-group">
                                 <label for="username">Username</label>
@@ -70,7 +70,7 @@
                                 <input type="password" class="form-control" name="cpassword" id="password" placeholder="Password">
                             </div>
                             <button class="btn btn-primary" name='reg'>REGISTER</button>
-                            <a href="<?php echo site_url('Home/Login') ?>" class="btn btn-link">Sign In</a>
+                            <a href="<?php echo site_url('customer/Home/Login') ?>" class="btn btn-link">Sign In</a>
 
                         <?php echo form_close() ?>
 

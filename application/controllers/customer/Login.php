@@ -10,12 +10,12 @@ class Login extends CI_Controller {
 
         if ($this->form_validation->run() == FALSE) {
 
-            $this->load->view('login_view');
+            $this->load->view('customer/users/login_view');
 
         } else {
 
-            $this->load->model('Model_user');
-            $reslt = $this->Model_user->checkLogin();
+            $this->load->model('User_model');
+            $reslt = $this->User_model->checkLogin();
 
             if ($reslt != false) {
 
@@ -25,7 +25,7 @@ class Login extends CI_Controller {
 
                 //fetch from databse
                 $this->db->select('*');
-                $this->db->from('users');
+                $this->db->from('customer');
                 $this->db->where(array('username' => $username , 'password' => $password));
                 $query = $this->db->get();
 
@@ -36,13 +36,13 @@ class Login extends CI_Controller {
 
                     //login message
                     $this->session->set_flashdata("success","You are logged in");
-
+                    $id = $this->User_model->get_id($user->username);
                     //set session variables
                     $_SESSION['user_logged'] = TRUE;
                     $_SESSION['username'] = $user->username;
-
+                    $_SESSION['id']= $id;
                     //redirect
-                    redirect('user/profile','refresh');
+                    redirect('category/show_category','refresh');
 
                 }
 
@@ -51,7 +51,7 @@ class Login extends CI_Controller {
 
                 //wrong credentials
                 $this->session->set_flashdata('error','Username or Password invalid!');
-                redirect('Home/Login');
+                redirect('customer/Home/Login');
 
             }
         }
@@ -59,7 +59,10 @@ class Login extends CI_Controller {
     }
     //logging out of a user
     public function logoutUser() {
-		unset($_SESSION);
-		redirect('Home/Login');
+
+        $_SESSION['user_logged'] = FALSE;
+        $_SESSION["username"] = "";
+
+		redirect('category/show_category');
 	}
 }
