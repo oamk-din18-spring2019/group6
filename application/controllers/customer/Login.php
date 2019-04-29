@@ -42,7 +42,7 @@ class Login extends CI_Controller {
                     $_SESSION['username'] = $user->username;
 
                     //redirect
-                    redirect('customer/user/profile','refresh');
+                    redirect('category/show_category','refresh');
 
                 }
 

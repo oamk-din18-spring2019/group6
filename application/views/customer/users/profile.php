@@ -13,10 +13,11 @@
         echo '<td>'.$row['lastname'].'</td>';
         echo '<td>'.$row['streetAddress'].'</td>';
         echo '<td>'.$row['postalCode'].'</td>';
-        echo '<td>'.$row['contact'].'</td>';
+        echo '<td>'.$row['phoneNumber'].'</td>';
         echo '<td>'.$row['email'].'</td>';
       echo '</tr>';
     }
     ?>
+     <a href="<?php echo site_url('customer/User/show_edit');?>"><button>Edit Profile</button></a>
   </tbody>
 </table>
