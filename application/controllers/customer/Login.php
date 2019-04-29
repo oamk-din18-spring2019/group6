@@ -42,7 +42,7 @@ class Login extends CI_Controller {
                     $_SESSION['username'] = $user->username;
                     $_SESSION['id']= $id;
                     //redirect
-                    redirect('customer/user/profile','refresh');
+                    redirect('category/show_category','refresh');
 
                 }
 
@@ -59,8 +59,10 @@ class Login extends CI_Controller {
     }
     //logging out of a user
     public function logoutUser() {
-      $_SESSION['user_logged']=false;
-      $_SESSION['username']="";
+
+        $_SESSION['user_logged'] = FALSE;
+        $_SESSION["username"] = "";
+
 		redirect('category/show_category');
 	}
 }

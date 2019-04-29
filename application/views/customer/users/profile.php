@@ -18,5 +18,6 @@
       echo '</tr>';
     }
     ?>
+     <a href="<?php echo site_url('customer/User/show_edit');?>"><button>Edit Profile</button></a>
   </tbody>
 </table>

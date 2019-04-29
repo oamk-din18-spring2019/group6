@@ -13,7 +13,7 @@ class User_model extends CI_Model {
             'email' =>$this->input->post('email'),
             'streetAddress' =>$this->input->post('streetAddress'),
             'postalCode' =>$this->input->post('postalCode'),
-            'contact' => $this->input->post('contact'),
+            'phoneNumber' => $this->input->post('phoneNumber'),
             'password' => sha1($this->input->post('password'))
 
         );
@@ -60,8 +60,25 @@ class User_model extends CI_Model {
         $query=$this->db->get('customer');
         return $query->result_array();
     }
+
+    public function edit_profile($insert_data,$id) {
+        $this->db->set($insert_data);
+        $this->db->where('idcustomer',$id);
+        $this->db->update('customer');
+        
+        if ($this->db->affected_rows() > 0) {
+            return TRUE;
+        } else {
+            return FALSE;
+        }
+    }
+
+    public function get_chosen($id) {
+        $this->db->select('*');
+        $this->db->from('customer');
+        $this->db->where('idcustomer',$id);
+        return $this->db->get()->result_array();
+    }
 }
-
-
 
 ?>
