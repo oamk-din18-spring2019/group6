@@ -9,11 +9,11 @@ class Delivery extends CI_Controller{
   function show_delivery() {
     $data['customers']=$this->Delivery_model->getDelivery();
     $data['page']='admin/delivery/show_delivery';
-    $this->load->view('layout/content',$data);
+    $this->load->view('layout/lay',$data);
   }
   function search_form() {
     $data['page']='admin/delivery/search_form';
-    $this->load->view('layout/content',$data);
+    $this->load->view('layout/layout',$data);
   }
   function searching_items() {
     $keyword = $this->input->post('keyword');
@@ -22,7 +22,7 @@ class Delivery extends CI_Controller{
   }
   function add_form() {
     $data['page']='admin/delivery/add_form';
-    $this->load->view('layout/content', $data);
+    $this->load->view('layout/layout', $data);
   }
   function add_customer() {
     $insert_data=array(
@@ -41,18 +41,18 @@ class Delivery extends CI_Controller{
       $data['message']="Something went wrong!";
     }
     $data['page']='admin/delivery/add_info';
-    $this->load->view('layout/content',$data);
+    $this->load->view('layout/layout',$data);
   }
   function show_maindelivery()  {
   $data['customers']=$this->Delivery_model->show_delivery();
   $data['page']='admin/delivery/show_maindelivery';
-  $this->load->view('layout/content',$data);
+  $this->load->view('layout/layout',$data);
   }
   function show_edit($id) {
    $data['customer']=$this->Delivery_model->get_chosen($id);
    $data['current_id']=$id;
    $data['page']='admin/delivery/edit_form';
-   $this->load->view('layout/content',$data);
+   $this->load->view('layout/layout',$data);
   }
   function edit_delivery() {
   //print_r($this->input->post());
@@ -73,7 +73,7 @@ class Delivery extends CI_Controller{
   else {
     $data['message']="Something went wrong!";
     $data['page']='admin/delivery/add_info';
-    $this->load->view('layout/content',$data);
+    $this->load->view('layout/layout',$data);
     }
   }
   function delete_customer($id)  {
@@ -83,6 +83,6 @@ class Delivery extends CI_Controller{
  function show_delete($id){
    $data['chosen_customer']=$this->Delivery_model->get_chosen($id);
    $data['page']='admin/delivery/delete_delivery';
-   $this->load->view('layout/content',$data);
+   $this->load->view('layout/layout',$data);
  }
 }
