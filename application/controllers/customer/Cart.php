@@ -26,7 +26,7 @@ class Cart extends CI_Controller{
     $data['name'] = $products->productName;
     $data['price'] = $products->price;
     $this->cart->insert($data);
-    redirect(base_url('customer/cart/show_cart'));
+    redirect(site_url('customer/cart/show_cart'));
   }
   function show_cart()
   {
@@ -36,7 +36,6 @@ class Cart extends CI_Controller{
     $this->data['total_items'] = $total_items;
     $this->data['page'] = 'customer/cart/show_cart';
     $this->load->view('menu/content',$this->data);
-
      //trả về product
   }
   function update()
@@ -50,7 +49,7 @@ class Cart extends CI_Controller{
       $data['qty'] = $updated_qty;
       $this->cart->update($data);
     }
-    redirect(base_url('customer/cart/show_cart'));
+    redirect(site_url('customer/cart/show_cart'));
   }
   function delete_item()
   {
@@ -72,7 +71,7 @@ class Cart extends CI_Controller{
     else{
       $this->cart->destroy();
     }
-    redirect(base_url('customer/cart/show_cart'));
+    redirect(site_url('customer/cart/show_cart'));
   }
   function buy()
   {
@@ -81,7 +80,7 @@ class Cart extends CI_Controller{
     $max_id = $this->Bills_model->get_id() ;
     $carts = $this->cart->contents();
     $bill_id = $max_id[0]['max(idBills)'] + 1;
-    $idc= 1;
+    $idc= $_SESSION['id'];
     $customer_array = $this->Cart_model->get_customer_by_id($idc);
     foreach ($carts as $row) {
       $insert_data=array(
@@ -98,7 +97,7 @@ class Cart extends CI_Controller{
     $result=$this->Bills_model->add_bill($insert_data);
     }
     $this->cart->destroy();
-    redirect('customer/cart/show_cart');
+    redirect(site_url('customer/cart/show_cart'));
   }
 
 

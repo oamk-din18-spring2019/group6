@@ -6,14 +6,14 @@
   </thead>
   <tbody>
     <?php
-    foreach ($customer as $row) {
+    foreach ($customers as $row) {
       echo '<tr>';
         echo '<td>'.$row['iddelivery'].'</td>';
         echo '<td>'.$row['idBills'].'</td>';
         echo '<td>'.$row['firstname'].'</td>';
         echo '<td>'.$row['lastname'].'</td>';
         echo '<td>'.$row['streetAdress'].'</td>';
-        echo '<td>'.$row[date("F j, Y, g:i a")].'</td>'
+        echo '<td>'.$row['day'].'</td>'
       echo '</tr>';
     }
     ?>
