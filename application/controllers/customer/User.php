@@ -25,6 +25,29 @@ class User extends CI_Controller {
     public function show_profile() {
         $username=$this->session->userdata('username');
         $data['profile'] = $this->User_model->get_detail($username);
-        $this->load->view('customer/users/profile',$data);
+        $data['page'] = 'customer/users/profile';
+        $this->load->view('menu/content',$data);
+    }
+
+    public function edit_profile() {
+        $insert_data = array(
+            'firstname'=>$this->input->post('firstname'),
+            'lastname' =>$this->input->post('lastname'),
+            'streetAddress'=>$this->input->post('streetAddress'),
+            'postalCode'=>$this->input->post('postalCode'),
+            'phoneNumber'=>$this->input->post('phoneNumber'),
+            'email'=>$this->input->post('email')
+        );
+       $result = $this->User_model->edit_profile($insert_data,$this->session->userdata['id']);
+       if ( $result != false) {
+        redirect('customer/User/show_profile');
+       } 
+    }
+
+    function show_edit() {
+        $id = $_SESSION['id'];
+       $data['editProfile'] = $this->User_model->get_chosen($id);
+       $data['page'] = 'customer/users/edit_profile';
+       $this->load->view('menu/content',$data);
     }
 }

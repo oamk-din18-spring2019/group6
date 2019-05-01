@@ -10,9 +10,19 @@ class products_model extends CI_Model{
 
   public function getProducts()
   {
-    $this->db->select('idproducts,productName,description,brand,type,quantity,price');
+    $this->db->select('idproducts,productName,description,brand,type,quantity,price,image');
     $this->db->from('products');
     return $this->db->get()->result_array();
+  }
+
+  public function search_products($keysearch)
+  {
+    $this->db->like('idproducts',$keysearch);
+    $this->db->or_like('productName',$keysearch);
+    $this->db->or_like('brand',$keysearch);
+    $this->db->or_like('type',$keysearch);
+    $this->db->or_like('price',$keysearch);
+    return $this->db->get('products')->result_array();
   }
 
   public function add_products($insert_data)

@@ -1,0 +1,109 @@
+
+#header {
+  background-color: #0F3E4E;
+  width:100%;
+  height:100px;
+  text-align: center;
+}
+#header img {
+  height: 100px;
+  weight: 30px;
+  float: left;
+}
+#sidebar-left {
+  float:left;
+  width:30%;
+  background-color: #2980b9;
+}
+#main {
+  float:right;
+  width: 70%;
+  background-color: #FFFFFF;
+}
+#main p {
+  padding-left: 20px;
+}
+#main li, ul, button {
+  font-family: 'Raleway', cursive;
+  margin-left: 20px;
+}
+#footer {
+  clear:both;
+  height: 50px;
+  width: 100%;
+  text-align: center;
+  background-color: lightgray;
+}
+#sidebar-left, #main, #sidebar-right  {
+  min-height: 550px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Raleway', cursive;
+  list-style: none;
+  text-decoration: none;
+}
+.middle {
+  position: relative;
+  width: 100%;
+}
+.menu {
+  overflow: hidden;
+  background: #3498db;
+}
+.item {
+  border-top: 1px solid #2980b9;
+  overflow: hidden;
+}
+.btn {
+  display: block;
+  padding: 16px 20px;
+  background: #3498db;
+  color: white;
+  position: relative;
+}
+.btn:before {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: #3498db;
+  left: 20px;
+  bottom: -7px;
+  transform: rotate(45deg);
+}
+.btn i {
+  margin-right: 10px;
+}
+.smenu  {
+  background: #333;
+  overflow: hidden;
+  transition: max-height 0.3s;
+  max-height: 0;
+}
+.smenu a  {
+  display: block;
+  padding: 16px 26px;
+  color: white;
+  font-size: 14px;
+  margin: 4px 0;
+  position: relative;
+}
+.smenu a:before {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 100%;
+  background: #3498db;
+  left: 0;
+  top: 0;
+  transition: 0.3s;
+  opacity: 0;
+}
+.smenu a:hover:before {
+  opacity: 1;
+}
+.item:target .smenu {
+  max-height: 10em;
+}
