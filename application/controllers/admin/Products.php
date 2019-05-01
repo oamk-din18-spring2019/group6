@@ -6,16 +6,46 @@ class products extends CI_Controller{
   public function __construct()
   {
     parent::__construct();
-    $this->load->model('admin/products_model');
+    $this->load->model('products_model');
+  }
+
+  //main page
+  function mainpage()
+  {
+    $data['products']=$this->products_model->getProducts();
+    $data['page']='admin/products/mainpage.php';
+    $this->load->view('layout/layout',$data);
+  }
+  //chosen products
+  function chosen_products()
+  {
+    $data['page']='admin/products/chosen_products.php';
+    $this->load->view('layout/layout',$data);
   }
 
   //show products is here
   function show_products()
-  {
-    $data['products']=$this->products_model->getProducts();
+  { 
+    //search product
+    $keysearch = $this->input->post('search');
+    $data['product'] = $this->products_model->search_products($keysearch);
+
+    //show product
+    $data['products'] = $this->products_model->getProducts();
+
     $data['page']='admin/products/show_products';
     $this->load->view('layout/layout',$data);
   }
+
+  //search products is here
+  // function search_products()
+  // {
+  //   $keysearch = $this->input->post('search');
+  //   $data['product'] = $this->products_model->search_products($keysearch);
+  //   $data['page']='products/search_products';
+  //   $this->load->view('menu/body',$data);
+  // }
+ 
 
   //add products is here
   function add_products()
@@ -75,7 +105,8 @@ class products extends CI_Controller{
       "brand" => $this->input->post('brand'),
       "type" => $this->input->post('type'),
       "quantity" => $this->input->post('quantity'),
-      "price" => $this->input->post('price')
+      "price" => $this->input->post('price'),
+      "image" => $this->input->post('img')
     );
     $result=$this->products_model->edit_products($update_data,$id);
     redirect('admin/products/show_products');
