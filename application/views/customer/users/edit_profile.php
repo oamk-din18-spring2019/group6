@@ -16,8 +16,8 @@
 			  <input type="text" name="phoneNumber" value="<?php echo $editProfile[0]['phoneNumber']; ?>" style="margin-left:20px;text-align:center;"> <br>
               <label for="">Email</label> 
 			  <input type="email" name="email" value="<?php echo $editProfile[0]['email']; ?>" style="margin-left:82px;text-align:center;"> 
-	       <div>
-		<div>
+	       </div>
+		</div>
 	        <button type="submit">SAVE</button>
 			<a href="<?php echo site_url('customer/User/show_profile'); ?>"><button>CANCEL</button></a>
 	</form>
