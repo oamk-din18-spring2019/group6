@@ -12,7 +12,7 @@ class Bills extends CI_Controller{
   {
     $data['bills'] = $this->Bills_model->get_bills();
     $data['page'] = 'admin/bills/show_bills';
-    $this->load->view('menu/content',$data);
+    $this->load->view('layout/layout',$data);
   }
   function add_bill()
   {
@@ -34,11 +34,11 @@ class Bills extends CI_Controller{
       $data['message']="Something went wrong!";
     }
     $data['page']='admin/bills/add_info';
-    $this->load->view('menu/content',$data);
+    $this->load->view('layout/layout',$data);
   }
   function add_form(){
     $data['page']='admin/bills/add_form';
-    $this->load->view('menu/content',$data);
+    $this->load->view('layout/layout',$data);
   }
   function index()
   {

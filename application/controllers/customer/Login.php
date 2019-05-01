@@ -41,8 +41,9 @@ class Login extends CI_Controller {
                     $_SESSION['user_logged'] = TRUE;
                     $_SESSION['username'] = $user->username;
                     $_SESSION['id']= $id;
+                    
                     //redirect
-                    redirect('customer/user/profile','refresh');
+                    redirect('category/show_category','refresh');
 
                 }
 

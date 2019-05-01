@@ -1,9 +1,10 @@
 <div id="items">
-      <div class = "box">
+      <div class="cart-table">
         <form action="<?php echo site_url('customer/cart/update')?>" method="post">
-      <table border="1">
-				<td>ID</td>
+      <table class="table">
+
 				<td>Name</td>
+        <td>Image</td>
 				<td>Price</td>
 
 				<td>Quantity</td>
@@ -14,10 +15,11 @@
       <?php foreach ($carts as $row):?>
         <?php $total_amounts += $row['subtotal']; ?>
         <tr>
-          <td><?php echo $row['id']; ?></td>
+
           <td><?php echo $row['name']; ?></td>
+          <td><img src="<?php echo base_url('public/image/'.$row['image']); ?>"class="item-img"></td>
           <td><?php echo number_format($row['price']) ; ?></td>
-          <td><input name="qty_<?php echo $row['id']; ?>" value="<?php echo $row['qty'];?>"></td>
+          <td><input type="number" name="qty_<?php echo $row['id']; ?>" value="<?php echo $row['qty'];?>" style="width :30px;"></td>
           <td><?php echo $row['subtotal']; ?></td>
 					<td><a href="<?php echo site_url('customer/cart/delete_item/'.$row['id']); ?>">Delete</a></td>
         </tr>
@@ -26,9 +28,9 @@
 
 <table>
       <tr><p> The total money is <?php echo number_format($total_amounts); ?></p></tr>
-      <tr><button type="submit">Update</button></tr>
-			<tr><button type="button" name="button"><a href="<?php echo site_url('customer/cart/buy')?>">Buy</a></button></tr>
-      <tr><button type="button" name="button"><a href="<?php echo site_url('customer/cart/delete_item')?>">Delete</a></button></tr>
+      <tr><button type="submit" class="btn btn-default">Update</button></tr>
+			<tr><button type="button" name="button" class="btn btn-default" style="margin-left: 10px;"><a href="<?php echo site_url('customer/cart/buy')?>">Buy</a></button></tr>
+      <tr><button type="button" name="button" class="btn btn-default" style="margin-left: 10px;"><a href="<?php echo site_url('customer/cart/delete_item')?>">Clear</a></button></tr>
       </table>
     </form>
 </div>

@@ -22,6 +22,7 @@ class Cart extends CI_Controller{
     $qty=1;
     $data = array();
     $data['id'] = $products->idproducts;
+    $data['image'] = $products->image;
     $data['qty']=$qty;
     $data['name'] = $products->productName;
     $data['price'] = $products->price;
@@ -36,6 +37,7 @@ class Cart extends CI_Controller{
     $this->data['total_items'] = $total_items;
     $this->data['page'] = 'customer/cart/show_cart';
     $this->load->view('menu/content',$this->data);
+
      //trả về product
   }
   function update()
@@ -93,7 +95,7 @@ class Cart extends CI_Controller{
       'amount'=>$row['qty'],
       'totalOfMoney'=>$row['subtotal']
     );
-
+    $bill_id = $bill_id + 1;
     $result=$this->Bills_model->add_bill($insert_data);
     }
     $this->cart->destroy();
