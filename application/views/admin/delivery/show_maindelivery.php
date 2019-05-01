@@ -1,7 +1,8 @@
+<h2 style="text-align: center">Delivery</h2>
 <table border="1">
   <thead>
     <tr><th>iddelivery</th><th>idBills</th><th>firstname</th><th>lastname</th>
-      <th>streetAdress</th><th>date</th><th>Delete</th><th>Edit</th></tr>
+      <th>streetAddress</th><th>date</th><th>Delete</th><th>Edit</th></tr>
   </thead>
   <tbody>
     <?php

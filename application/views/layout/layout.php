@@ -4,36 +4,45 @@
   <div class="middle">
     <div class="menu">
       <li class="item" id="profile">
-        <a href="#profile" class="btn">Profile</a>
+        <a href="#profile" class="btn"><i class="far fa-user"></i>Profile</a>
         <div class="smenu">
-          <a href="#">Posts</a>
-          <a href="#">Picture</a>
+          <a href="<?php echo site_url('admin/customer/show_customer') ?>">Show customer</a>
         </div>
       </li>
 
-      <li class="item" id="profile1">
-        <a href="#profile1" class="btn">Profile</a>
+      <li class="item" id="Product">
+        <a href="#Product" class="btn"><i class="fab fa-product-hunt"></i>Product</a>
         <div class="smenu">
-          <a href="#">Posts</a>
-          <a href="#">Picture</a>
+          <a href="<?php echo site_url('admin/products/show_products') ?>">Product</a>
+          <a href="<?php echo site_url('admin/products/add_products') ?>">Add</a>
         </div>
       </li>
+
+      <li class="item" id="Bill">
+        <a href="#Bill" class="btn"><i class="fas fa-file-invoice-dollar"></i>Bill</a>
+        <div class="smenu">
+          <a href="<?php echo site_url('admin/bills/show_bills') ?>">Bill</a>
+        </div>
+      </li>
+
 
       <li class="item" id="Delivery">
-        <a href="#Delivery" class="btn">Delivery</a>
+        <a href="#Delivery" class="btn"><i class="fas fa-truck"></i>Delivery</a>
         <div class="smenu">
           <a href="<?php echo site_url('admin/delivery/show_maindelivery'); ?>">Show Delivery</a>
           <a href="<?php echo site_url('admin/delivery/add_form'); ?>">Add Form</a>
         </div>
       </li>
 
-      <li class="item" id="profile3">
-        <a href="#profile3" class="btn">Logout</a>
+      <li class="item" id="Logout">
+        <a href="#Logout" class="btn"><i class="fas fa-sign-out-alt"></i>Logout</a>
       </li>
 
 
     </div>
   </div>
 </div>
-<div id="main"><?php $this->load->view($page); ?></div>
+<div id="main">
+  <?php $this->load->view($page); ?>
+</div>
 <?php $this->load->view('layout/footer'); ?>

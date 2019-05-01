@@ -1,5 +1,4 @@
-<h2>Edit Delivery</h2>
-<?php print_r($customer); ?>
+<h2>Edit</h2>
 <form class="" action="<?php echo site_url('admin/delivery/edit_delivery'); ?>" method="post">
   <label for="">iddelivery</label> <br>
   <input type="number" name="iddelivery" value="<?php echo $customer[0]['iddelivery']; ?>" > <br>
