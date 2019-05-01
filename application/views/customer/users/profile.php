@@ -34,5 +34,5 @@ foreach ($profile as $row) {
 }
     ?>
 </table>
-<div style="position:absolute;margin-left:30px"><a href="<?php echo site_url('customer/User/show_edit');?>"><button>Edit Profile</button></a></div>
+<a href="<?php echo site_url('customer/User/show_edit');?>"><button>Edit Profile</button></a>
 </div>
