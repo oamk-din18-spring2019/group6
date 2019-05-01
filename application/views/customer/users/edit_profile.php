@@ -19,8 +19,8 @@
 	       </div>
 		</div>
 	        <button type="submit">SAVE</button>
-			<a href="<?php echo site_url('customer/User/show_profile'); ?>"><button>CANCEL</button></a>
 	</form>
+	<a href="<?php echo site_url('customer/User/show_profile'); ?>"><button>CANCEL</button></a>
 	
 
 	
