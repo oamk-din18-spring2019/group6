@@ -1,23 +1,38 @@
 <h2>Profile</h2>
-<table border="1">
-  <thead>
-    <tr><th>username</th><th>firstname</th><th>lastname</th><th>Address</th>
-      <th>Postal Code</th><th>contact</th><th>email</th></tr>
-  </thead>
-  <tbody>
-    <?php
-    foreach ($profile as $row) {
-      echo '<tr>';
-        echo '<td>'.$row['username'].'</td>';
-        echo '<td>'.$row['firstname'].'</td>';
-        echo '<td>'.$row['lastname'].'</td>';
-        echo '<td>'.$row['streetAddress'].'</td>';
-        echo '<td>'.$row['postalCode'].'</td>';
-        echo '<td>'.$row['phoneNumber'].'</td>';
-        echo '<td>'.$row['email'].'</td>';
-      echo '</tr>';
-    }
+<div id="items">
+<table class="table">
+<?php
+foreach ($profile as $row) {
+  echo '<tr>';
+  echo '<td>username</td>';
+  echo '<td>'.$row['username'].'</td>';
+  echo '</tr>';
+  echo '<tr>';
+  echo '<td>Firstname</td>';
+  echo '<td>'.$row['firstname'].'</td>';
+  echo '</tr>';
+  echo '<tr>';
+  echo '<td>Lastname</td>';
+  echo '<td>'.$row['lastname'].'</td>';
+  echo '</tr>';
+  echo '<tr>';
+  echo '<td>Address</td>';
+  echo '<td>'.$row['streetAddress'].'</td>';
+  echo '</tr>';
+  echo '<tr>';
+  echo '<td>Postal Code</td>';
+  echo '<td>'.$row['postalCode'].'</td>';
+  echo '</tr>';
+  echo '<tr>';
+  echo '<td>Contact</td>';
+  echo '<td>'.$row['phoneNumber'].'</td>';
+  echo '</tr>';
+  echo '<tr>';
+  echo '<td>Email</td>';
+  echo '<td>'.$row['email'].'</td>';
+  echo '</tr>';
+}
     ?>
-     <a href="<?php echo site_url('customer/User/show_edit');?>"><button>Edit Profile</button></a>
-  </tbody>
 </table>
+<div style="position:absolute;margin-left:30px"><a href="<?php echo site_url('customer/User/show_edit');?>"><button>Edit Profile</button></a></div>
+</div>
