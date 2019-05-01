@@ -12,7 +12,7 @@
         echo '<td>'.$row['idBills'].'</td>';
         echo '<td>'.$row['firstname'].'</td>';
         echo '<td>'.$row['lastname'].'</td>';
-        echo '<td>'.$row['streetAdress'].'</td>';
+        echo '<td>'.$row['address'].'</td>';
         echo '<td>'.$row['day'].'</td>';
         echo '<td><a href="'.site_url('admin/delivery/show_delete/').$row['iddelivery'].'">DELETE</a></td>';
         echo '<td><a href="'.site_url('admin/delivery/show_edit/').$row['iddelivery'].'">EDIT</a></td>';

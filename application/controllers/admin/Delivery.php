@@ -30,7 +30,7 @@ class Delivery extends CI_Controller{
       "idBills" => $this->input->post('idBills'),
       "firstname" => $this->input->post('firstname'),
       "lastname" => $this->input->post('lastname'),
-      "streetAdress " => $this->input->post('streetAdress'),
+      "address " => $this->input->post('address'),
       "day" => $this->input->post('day')
     );
     $result=$this->Delivery_model->add_customer($insert_data);
@@ -62,7 +62,7 @@ class Delivery extends CI_Controller{
     "idBills" => $this->input->post('idBills'),
     "firstname" => $this->input->post('firstname'),
     "lastname" => $this->input->post('lastname'),
-    "streetAdress" => $this->input->post('streetAdress'),
+    "address" => $this->input->post('address'),
     "day" => $this->input->post('day'),
     );
   $result=$this->Delivery_model->edit_delivery($update_data,$id);
