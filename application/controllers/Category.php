@@ -8,11 +8,14 @@ class Category extends CI_Controller{
     parent::__construct();
     //Codeigniter : Write Less Do More
     $this->load->model('Category_model');
+    $this->load->library('cart');
   }
 
 
   function show_category()
   {
+    $total_items = $this->cart->total_items();
+    $data['total_items'] = $total_items;
     $data['category'] = $this->Category_model->get_id();
     $data['page'] = 'customer/category/show_category';
     $this->load->view('menu/content',$data);

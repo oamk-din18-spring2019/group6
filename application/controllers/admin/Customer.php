@@ -10,7 +10,7 @@ class Customer extends CI_Controller {
     public function show_customer() {
         $data['customers'] = $this->Customer_model->getCustomer();
         $data['page'] = "admin/customers/show_customers";
-        $this->load->view("menu_admin/content",$data);
+        $this->load->view("layout/layout",$data);
     }
 }
 ?>

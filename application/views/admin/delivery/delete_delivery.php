@@ -1,4 +1,4 @@
-<h2>Delete Customer</h2>
+<h2>Delete</h2>
 <p>
   Do you want to delete customer: <br>
 </p>

@@ -118,3 +118,4 @@ function add_form(){
   $this->load->view('layout/layout',$data);
 }
 }
+

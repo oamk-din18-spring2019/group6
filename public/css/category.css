@@ -302,12 +302,40 @@ ul ul a {
     padding-left: 30px !important;
     background: #6d7fcc;
 }
+.totalItem
+{
+border-radius: 100px;
+top: -12px;
+width: 28px;
+background-color: #f5f5f5;
+/* border-color: black; */
+border: solid #777;
+text-align: center;
+position: absolute;
+left: 20px;
+}
+#cart-Img{
+  font-size: 32px;
+}
 .box
 {
-  width: 30%;
-  height : 300px;
+  width: 24%;
+  height : 360px;
   margin: 10px;
-  float: left;
+  border: 1px solid transparent;
+  border: 10px solid rgba(255,255,255,1);
+  border-radius: 25px;
+
+
+  /* float: left; */
+}
+.box p{
+  margin-left: 20px;
+  width: 48%;
+  /* display: block; */
+  font-family: fantasy;
+  margin:auto;
+  padding: 8px;
 }
 img
 {
@@ -315,18 +343,7 @@ img
   height : 70%;
   float:left;
 }
-.productName
-{
-  padding-left: 30%;
-  padding-right: 30%;
-  margin-left:20px;
-}
-.price
-{
-padding-left: 50%;
-padding-right: 50%;
-padding-top: 20px ;
-}
+
 .left
 {
   width: 40%;
@@ -339,11 +356,25 @@ padding-top: 20px ;
   width: 40%;
   height : 500px;
   margin: 10px;
+  margin-right: 200px;
   float: left;
 }
 #items
 {
   width: 100%;
   min-height: 500px;
-
+  display: flex;
+}
+.cart-table
+{
+margin-left: 50px;
+}
+.item-img
+{
+  width: 150px;
+  height: 150px;
+}
+.input
+{
+  width : 15px;
 }

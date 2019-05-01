@@ -2,21 +2,23 @@
 		<div id="items">
       <?php
       foreach ($category as $row ) {
-      echo '<a href="'.site_url('/customer/items/show_items/');
-      echo $row['idproducts'].'">';
+
       echo '<div class="box">';
-      echo '<div class="img">';
-      echo'<img class="img" src="https://c.static-nike.com/a/images/t_PDP_1280_v1/f_auto/acq6wgi3oxsvgbi0hnat/air-huarache-ultra-shoe-pvTlZxPy.jpg">';
-      echo '</div>';
-      echo '<div class="productName">';
+      //echo '<div class="img">';
+      echo'<p class="img" style="width : 200px;"><img class="img" src="'.base_url('public/image/'.$row['image']).'"></p>';
+      //echo '</div>';
+      echo '<p >';
       echo $row['productName'];
-      echo '</div>';
-      echo '<div class="price">';
+      echo '</p>';
+      echo '<p>';
       echo $row['price'];
-      echo '</div>';
+      echo '</p>';
+			echo '<p><button class="btn btn-primary"><a href="'.site_url('/customer/items/show_items/');
+      echo $row['idproducts'].'">';
+			echo 'View product</a></button></p>';
       echo '</div>';
 
-      echo '</a>';
+
     }
     ?>
 		</div>
