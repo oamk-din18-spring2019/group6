@@ -12,7 +12,7 @@
 	  <li>Image : <?php echo '<img style="width:100px" src="'.$chosen_products[0]['image'].'"/>'; ?> </li>
 	</h3>
 </ul>
-<a href="<?php echo site_url('products/delete_products/').$chosen_products[0]['idproducts']; ?>"><button>DELETE</button></a>
-<a href="<?php echo site_url('products/show_products'); ?>"><button>CANCEL</button></a>
+<a href="<?php echo site_url('admin/products/delete_products/').$chosen_products[0]['idproducts']; ?>"><button>DELETE</button></a>
+<a href="<?php echo site_url('admin/products/show_products'); ?>"><button>CANCEL</button></a>
 
 </div>

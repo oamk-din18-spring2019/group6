@@ -13,14 +13,14 @@ class products extends CI_Controller{
   function mainpage()
   {
     $data['products']=$this->products_model->getProducts();
-    $data['page']='products/mainpage.php';
-    $this->load->view('menu/body',$data);
+    $data['page']='admin/products/mainpage.php';
+    $this->load->view('layout/layout',$data);
   }
   //chosen products
   function chosen_products()
   {
-    $data['page']='products/chosen_products.php';
-    $this->load->view('menu/body',$data);
+    $data['page']='admin/products/chosen_products.php';
+    $this->load->view('layout/layout',$data);
   }
 
   //show products is here
@@ -33,8 +33,8 @@ class products extends CI_Controller{
     //show product
     $data['products'] = $this->products_model->getProducts();
 
-    $data['page']='products/show_products';
-    $this->load->view('menu/body',$data);
+    $data['page']='admin/products/show_products';
+    $this->load->view('layout/layout',$data);
   }
 
   //search products is here
@@ -69,21 +69,21 @@ class products extends CI_Controller{
     {
       $data['message']="Something went wrong!";
     }
-    $data['page']='products/add_products';
-    $this->load->view('menu/body',$data);
+    $data['page']='admin/products/add_products';
+    $this->load->view('layout/layout',$data);
   }
 
   //delete products is here
    function show_delete($id)
    {
     $data['chosen_products']=$this->products_model->get_chosen($id);
-    $data['page']='products/delete_products';
-    $this->load->view('menu/body',$data);
+    $data['page']='admin/products/delete_products';
+    $this->load->view('layout/layout',$data);
   }
   function delete_products($id)
   {
     $this->products_model->delete_products($id);
-    redirect('products/show_products');
+    redirect('admin/products/show_products');
   }
 
   //edit products is here
@@ -91,8 +91,8 @@ class products extends CI_Controller{
   {
     $data['products']=$this->products_model->get_chosen($id);
     $data['current_id']=$id;
-    $data['page']='products/edit_products';
-    $this->load->view('menu/body',$data);
+    $data['page']='admin/products/edit_products';
+    $this->load->view('layout/layout',$data);
   }
 
   function edit_products()
@@ -109,6 +109,6 @@ class products extends CI_Controller{
       "image" => $this->input->post('img')
     );
     $result=$this->products_model->edit_products($update_data,$id);
-    redirect('products/show_products');
+    redirect('admin/products/show_products');
   }
 }
