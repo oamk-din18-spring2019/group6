@@ -1,3 +1,4 @@
+
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -112,3 +113,4 @@ class products extends CI_Controller{
     redirect('admin/products/show_products');
   }
 }
+

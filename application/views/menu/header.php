@@ -71,22 +71,25 @@
 										</div>
 										<button type="submit" class="btn btn-danger">SEARCH</button>
 									</form>
+									<ul class="nav navbar-nav">
 					<?php
 				if(!empty($_SESSION['user_logged']) && $_SESSION['user_logged']==true){
-  				echo $_SESSION['username'];
-					echo '<div><a href="'.site_url('customer/login/logoutUser').'">Log out</a></div>';
+  				echo '<li><a href="'.site_url('customer/user/show_profile').'">'.$_SESSION['username'].'</a></li>';
+					echo '<li><a href="'.site_url('customer/login/logoutUser').'">Log out</a></li>';
 					}
 					else {
-						echo '<div margin-left:"5px"><a href="'.site_url('customer/home/login').'">Sign in</a></div>';
-						echo '<div><a href="'.site_url('customer/home/register').'">Sign up</a></div>';
+						echo '<li margin-left:"5px"><a href="'.site_url('customer/home/login').'">Sign in</a></li>';
+						echo '<li margin-left:"5px"><a href="'.site_url('customer/home/register').'">Sign up</a></li>';
 				}
 ?>
-
+</ul>
 								</div>
 									<div class="cart">
 										<ul class="nav navbar-nav navbar-right">
 				                            <li class="cart-Menu">
+																			<div class="totalItem"><a href="<?php echo site_url('customer/cart/show_cart')?>"><?php echo $total_items;?></a></div>
 					                            <i class="fas fa-cart-plus" id="cart-Img"></i>
+
 					                            <div id="cart-Content">
 						                            <table>
 						                                <thead>
@@ -127,7 +130,7 @@
 
 		        <ul class="list-unstyled components">
 		            <li class="active">
-		                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+		                <a href="<?php echo site_url('category/show_category')?>" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
 		                    <i class="fas fa-home"></i>
 		                    Home
 		                </a>
