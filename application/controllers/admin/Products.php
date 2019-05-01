@@ -26,7 +26,7 @@ class products extends CI_Controller{
 
   //show products is here
   function show_products()
-  { 
+  {
     //search product
     $keysearch = $this->input->post('search');
     $data['product'] = $this->products_model->search_products($keysearch);
@@ -46,7 +46,7 @@ class products extends CI_Controller{
   //   $data['page']='products/search_products';
   //   $this->load->view('menu/body',$data);
   // }
- 
+
 
   //add products is here
   function add_products()
@@ -62,15 +62,15 @@ class products extends CI_Controller{
       "image" => $this->input->post('img')
     );
     $result=$this->products_model->add_products($insert_data);
-    if ($result==1) 
+    if ($result==1)
     {
       $data['message']="Add products : Done!";
     }
-    else 
+    else
     {
       $data['message']="Something went wrong!";
     }
-    $data['page']='admin/products/add_products';
+    $data['page']='admin/products/add_form';
     $this->load->view('layout/layout',$data);
   }
 
@@ -112,5 +112,10 @@ class products extends CI_Controller{
     $result=$this->products_model->edit_products($update_data,$id);
     redirect('admin/products/show_products');
   }
+
+function add_form(){
+  $data['page']='admin/products/add_form';
+  $this->load->view('layout/layout',$data);
+}
 }
 
