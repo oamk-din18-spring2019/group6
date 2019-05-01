@@ -27,7 +27,8 @@ class products extends CI_Controller{
       "brand" => $this->input->post('brand'),
       "type" => $this->input->post('type'),
       "quantity" => $this->input->post('quantity'),
-      "price" => $this->input->post('price')
+      "price" => $this->input->post('price'),
+      "image" => $this->input->post('img')
     );
     $result=$this->products_model->add_products($insert_data);
     if ($result==1) 
