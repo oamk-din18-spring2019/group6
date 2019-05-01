@@ -2,7 +2,7 @@
 <div style="display: flex">
   <div style="margin-right: auto;margin-left: auto;">
   <h2>Add Products</h2>
-    <form class="" action="<?php echo site_url('products/add_products'); ?>" method="post">
+    <form class="" action="<?php echo site_url('admin/products/add_products'); ?>" method="post">
       <div style="display: flex"> 
           <div>
               <p style="padding-top: 4px"><label>ID</label></p>
