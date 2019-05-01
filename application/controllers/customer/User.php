@@ -6,6 +6,7 @@ class User extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('User_model');
+        $this->load->library('cart');
     }
     
     public function profile() {
@@ -23,6 +24,8 @@ class User extends CI_Controller {
     }
 
     public function show_profile() {
+        $total_items = $this->cart->total_items();
+        $data['total_items'] = $total_items;
         $username=$this->session->userdata('username');
         $data['profile'] = $this->User_model->get_detail($username);
         $data['page'] = 'customer/users/profile';
@@ -45,7 +48,9 @@ class User extends CI_Controller {
     }
 
     function show_edit() {
-        $id = $_SESSION['id'];
+       $total_items = $this->cart->total_items();
+       $data['total_items'] = $total_items;
+       $id = $_SESSION['id'];
        $data['editProfile'] = $this->User_model->get_chosen($id);
        $data['page'] = 'customer/users/edit_profile';
        $this->load->view('menu/content',$data);
