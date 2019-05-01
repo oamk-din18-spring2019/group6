@@ -13,8 +13,8 @@
   <label for="">address</label> <br>
   <input type="text" name="address" value="<?php echo $customer[0]['address']; ?>"> <br>
 
-  <label for="">day</label> <br>
-  <input type="text" name="day" value="<?php echo $customer[0]['day']; ?>"> <br>
+  <label for="">date</label> <br>
+  <input type="text" name="date" value="<?php echo $customer[0]['date']; ?>"> <br>
 
   <input type="hidden" name="current_id" value="<?php echo $current_id; ?>">
   <input type="submit" name="" value="Save">

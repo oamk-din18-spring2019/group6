@@ -31,7 +31,7 @@ class Delivery extends CI_Controller{
       "firstname" => $this->input->post('firstname'),
       "lastname" => $this->input->post('lastname'),
       "address " => $this->input->post('address'),
-      "day" => $this->input->post('day')
+      "date" => $this->input->post('date')
     );
     $result=$this->Delivery_model->add_customer($insert_data);
     if ($result==1) {
@@ -63,7 +63,7 @@ class Delivery extends CI_Controller{
     "firstname" => $this->input->post('firstname'),
     "lastname" => $this->input->post('lastname'),
     "address" => $this->input->post('address'),
-    "day" => $this->input->post('day'),
+    "date" => $this->input->post('date'),
     );
   $result=$this->Delivery_model->edit_delivery($update_data,$id);
   if ($result==1) {
