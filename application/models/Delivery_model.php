@@ -9,7 +9,7 @@ class Delivery_model extends CI_Model{
     }
 
     public function getDelivery() {
-      $this->db->select('iddelivery,idBills,firstname,lastname,streetAdress');
+      $this->db->select('iddelivery,idBills,firstname,lastname,address');
       $this->db->from('delivery');
       $this->db->join('bills', 'delivery.idBills=bills.idBills','inner');
       $this->db->join('customer', 'bills.idCustomer=customer.idCustomer', 'inner');

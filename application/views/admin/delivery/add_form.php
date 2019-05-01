@@ -12,8 +12,8 @@
   <label for="">Lastname</label> <br>
   <input type="text" name="lastname" value=""> <br>
 
-  <label for="">StreetAdress</label> <br>
-  <input type="text" name="streetAdress" value=""> <br>
+  <label for="">address</label> <br>
+  <input type="text" name="address" value=""> <br>
 
   <label for="">Date</label> <br>
   <input type="text" name="day" value="<?php echo date('d / m / Y'); ?>"/> <br>

@@ -10,8 +10,8 @@
   <label for="">lastname</label> <br>
   <input type="text" name="lastname" value="<?php echo $customer[0]['lastname']; ?>" required> <br>
 
-  <label for="">streetAdress</label> <br>
-  <input type="text" name="streetAdress" value="<?php echo $customer[0]['streetAdress']; ?>"> <br>
+  <label for="">address</label> <br>
+  <input type="text" name="address" value="<?php echo $customer[0]['address']; ?>"> <br>
 
   <label for="">day</label> <br>
   <input type="text" name="day" value="<?php echo $customer[0]['day']; ?>"> <br>
