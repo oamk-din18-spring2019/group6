@@ -1,9 +1,15 @@
 <header><title>ADMIN - SHOW PRODUCT PAGE</title></header>
-<div style="display: flex">
-  <div style="margin-right: auto;margin-left: auto;">
+<div>
+  <form class="navbar-form " role="search" action="<?php echo site_url('admin/products/show_products')?>" method="post" style="display:flex">
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search" name="search">
+                  </div>
+                  <button type="submit" class="btn btn-danger">SEARCH</button>
+                </form>
+  <!-- <div style="margin-right: auto;margin-left: auto;">
   <h2>Add Products</h2>
     <form class="" action="<?php echo site_url('admin/products/add_products'); ?>" method="post">
-      <div style="display: flex"> 
+      <div style="display: flex">
           <div>
               <p style="padding-top: 4px"><label>ID</label></p>
               <p><label for="">Name</label> <br></p>
@@ -14,10 +20,10 @@
               <p style="padding-top: 4px"><label>Price</label> <br></p>
               <p><label>Image</label></p>
           </div>
-          
+
           <div>
-              <p><input type="number" name="id" required> <br> </p>  
-              <p><input type="text" name="name" required> <br></p> 
+              <p><input type="number" name="id" required> <br> </p>
+              <p><input type="text" name="name" required> <br></p>
               <p><input type="text" name="des"  required> <br></p>
               <p><input type="text" name="brand" required> <br></p>
               <p><input type="text" name="type"  required> <br></p>
@@ -25,28 +31,28 @@
               <p><input type="number" name="price" min="1" required> <br></p>
               <p><input type="text" name="img" required> <br></p>
           </div>
-      </div>  
+      </div>
         <button class="btn btn-primary" type="submit" style="float: right">Add Products</button>
     </form>
-  </div>
- 
+  </div> -->
+
 
   <!-- open and close buttons in search and show products -->
   <script type="text/javascript">
     function openCloseTable() {
     let getTable  = document.querySelector(".table");
     let getButton = document.querySelector(".button");
-    
-    if (getTable.innerHTML) 
+
+    if (getTable.innerHTML)
     {
         getTable.innerHTML  = '<tbody class="table"></tbody>';
         //getButton.innerHTML = '<button class="btn btn-danger" onclick="openCloseTable()">Open Table</button>';
     }
-     else 
+     else
       {
         getTable.innerHTML  = '<?php
 
-              foreach ($product as $search) 
+              foreach ($product as $search)
               {
                 echo '<tr>';
                   echo '<td>'.$search['idproducts'].'</td>';
@@ -60,19 +66,19 @@
                   echo '</tr>';
               }
             ?>';
-      //    getButton.innerHTML = 
+      //    getButton.innerHTML =
       //    '<button class="btn btn-danger" onclick="openCloseTable()">Close Table <i class="fas fa-window-close"></i></button>';
        }
 }
   </script>
-  
+
  <div style="display: block">
   <div>
     <div class="button" style="text-align: center;">
       <h2>Search Products</h2>
       <button class="btn btn-primary" onclick="openCloseTable()"></button>
     </div>
-    
+
     <div>
       <table border="1" style="width: 1000px">
         <thead>
@@ -88,7 +94,7 @@
           </tr>
         </thead>
         <tbody  class="table">
-            
+
         </tbody>
       </table>
     </div>
@@ -96,7 +102,7 @@
 
 <!-- Show products -->
   <div>
-    <h2 style="text-align: center">Show Products</h2>
+    <h2>Show Products</h2>
     <table border="1" style="width: 1000px">
       <thead>
         <tr>
@@ -114,7 +120,7 @@
       </thead>
       <tbody>
         <?php
-          foreach ($products as $row) 
+          foreach ($products as $row)
           {
             echo '<tr>';
               echo '<td>'.$row['idproducts'].'</td>';
@@ -124,9 +130,9 @@
               echo '<td>'.$row['type'].'</td>';
               echo '<td>'.$row['quantity'].'</td>';
               echo '<td>'.$row['price'].'</td>';
-              echo '<td><img style="width:100px" src="'.$row['image'].'"/></td>';
-              echo '<td><a href="'.site_url('products/show_delete/').$row['idproducts'].'">DELETE</a></td>';
-              echo '<td><a href="'.site_url('products/show_edit/').$row['idproducts'].'">EDIT</a></td>';
+              echo '<td><img style="width:100px" src="'.base_url('public/image/').$row['image'].'"/></td>';
+              echo '<td><a href="'.site_url('admin/products/show_delete/').$row['idproducts'].'">DELETE</a></td>';
+              echo '<td><a href="'.site_url('admin/products/show_edit/').$row['idproducts'].'">EDIT</a></td>';
             echo '</tr>';
           }
         ?>
@@ -135,5 +141,3 @@
   </div>
 </div>
 </div>
-
-        
