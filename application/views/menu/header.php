@@ -39,7 +39,7 @@
 							<i onclick="show_previous_picture()" class="fas fa-arrow-alt-circle-left">
 							</i>
 						</div>
-						<div id="Img"><img class="imgHeader" id="image_element_id" src="../images/slide2.jpg"></div>
+						<div id="Img"><img class="imgHeader" id="image_element_id" src="<?php echo base_url('public/image/slide2.jpg')?>"></div>
 						<div id="Button">
 							<i onclick="show_next_picture()" class="fas fa-arrow-alt-circle-right">
 							</i>
