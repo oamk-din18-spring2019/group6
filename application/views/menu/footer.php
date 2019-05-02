@@ -48,8 +48,8 @@ $(document).ready(function () {
 
 <!-- next and back button in header -->
 <script>
-var  picture_file_names  = [ "../images/slide1.jpg",
-                         "../images/slide2.jpg"] ;
+var  picture_file_names  = [ "<?php echo base_url('public/image/slide1.jpg')?>",
+                         "<?php echo base_url('public/image/slide2.jpg')?>"] ;
 var  picture_index = 0 ;
 function show_next_picture()
 {
