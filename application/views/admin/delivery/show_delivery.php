@@ -13,7 +13,7 @@
         echo '<td>'.$row['firstname'].'</td>';
         echo '<td>'.$row['lastname'].'</td>';
         echo '<td>'.$row['address'].'</td>';
-        echo '<td>'.$row['day'].'</td>'
+        echo '<td>'.$row['date'].'</td>'
       echo '</tr>';
     }
     ?>
