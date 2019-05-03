@@ -14,7 +14,7 @@
         <a href="#Product" class="btn"><i class="fab fa-product-hunt"></i>Product</a>
         <div class="smenu">
           <a href="<?php echo site_url('admin/products/show_products') ?>">Product</a>
-          <a href="<?php echo site_url('admin/products/add_products') ?>">Add</a>
+          <a href="<?php echo site_url('admin/products/add_form') ?>">Add</a>
         </div>
       </li>
 
