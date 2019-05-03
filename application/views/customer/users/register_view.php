@@ -59,7 +59,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="contact">Contact</label>
-                                <input type="text" class="form-control" name="contact" id="contact" placeholder="Phone Number">
+                                <input type="text" class="form-control" name="phoneNumber" id="phoneNumber" placeholder="Phone Number">
                             </div>
                             <div class="form-group">
                                 <label for="password">Password</label>
